@@ -4,6 +4,7 @@ const input = fs.readFileSync("input.txt", "utf8").split("\n");
 const boundaries = input.shift().split(" ");
 const boundaryX = boundaries[0];
 const boundaryY = boundaries[1];
+const scent = [];
 
 const makeBotObject = botString => {
   const botArray = botString.split(" ");
@@ -19,6 +20,17 @@ const commandBot = (bot, commands) => {
   const commandBotReducer = (bot, command) => {
     // lost bots don't move, this is a no-op
     if (bot.status === "LOST") {
+      return bot;
+    }
+
+    // Don't move forward if position is in scent, also a no-op
+    const sniffed = scent.filter(
+      sniff =>
+        sniff.x === bot.x &&
+        sniff.y === bot.y &&
+        sniff.orientation === bot.orientation
+    );
+    if (sniffed.length && command === "F") {
       return bot;
     }
 
@@ -63,6 +75,7 @@ const commandBot = (bot, commands) => {
             const north = bot.y + 1;
             if (north > boundaryY) {
               bot.status = "LOST";
+              scent.push(bot);
             } else {
               bot.y = north;
             }
@@ -71,6 +84,7 @@ const commandBot = (bot, commands) => {
             const east = bot.x + 1;
             if (east > boundaryX) {
               bot.status = "LOST";
+              scent.push(bot);
             } else {
               bot.x = east;
             }
@@ -79,6 +93,7 @@ const commandBot = (bot, commands) => {
             const south = bot.y - 1;
             if (south < 0) {
               bot.status = "LOST";
+              scent.push(bot);
             } else {
               bot.y = south;
             }
@@ -87,6 +102,7 @@ const commandBot = (bot, commands) => {
             const west = bot.x - 1;
             if (west < 0) {
               bot.status = "LOST";
+              scent.push(bot);
             } else {
               bot.x = west;
             }
@@ -120,4 +136,5 @@ const parse = input => {
 
 const output = parse(input);
 fs.writeFileSync("output.txt", output);
-console.log(output);
+console.log("Complete!");
+console.log("See output.txt for results");
