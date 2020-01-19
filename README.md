@@ -21,7 +21,7 @@ I was only able to add some very most basic of tests, and even those were added 
 
 I've just started Eric Elliot's [Composing Software](https://leanpub.com/composingsoftware), now while I'm not ready to write code in "point free style" yet, I have been considering the flexibility of reducers. So when I saw the input as an array... well I just could not help but think of a reducer solution. 
 
-On refection this is less that ideal, while the **commandBotReducer** is likely fine, the **inputReducer** is a little mad. Not to mention that nesting one reducer inside another leads to some odd circular thinking, and lacks the legibility I prefer. This became obvious midway, yet as I was trying to hit the deadline I forwent the refactor. 
+On refection this is less that ideal, while the **commandBotReducer** is likely fine, the **inputReducer** is a little mad. Not to mention that nesting one reducer inside another leads to some odd circular thinking, and lacks the legibility I prefer. This became obvious midway, yet in trying to hit the deadline I forwent the refactor. 
 
 #### Refactor all the things
 
@@ -37,5 +37,5 @@ For example you could create a large grid, say 50x50 and start each bot at 0,0. 
 
 It would be interesting to see how many generations (on average) it would take before the perfect Uber bot starts to trend. One that moves directly from 0,0 to 50,50. 
 
-Naturally all the arbitrary parameters above could be tweaked for comparison. One could introduce new scents to act as waypoints or food, add random mutations per generation, even predators, or simply enhance the health calculation. The list is as long and varied as life itself. Perhaps even more so, one could "breed" bots with 3 parents, or 50. You know, just to make sure we ourselves are on the right track...
+Naturally all the arbitrary parameters could be tweaked for comparison. One could introduce new scents to act as waypoints or food, add random mutations per generation, even predators, or simply enhance the health calculation. The list is as long and varied as life itself. Perhaps even more so, one could "breed" bots with 3 parents, or 50. You know, just to make sure we ourselves are on the right track...
 
