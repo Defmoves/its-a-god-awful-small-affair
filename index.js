@@ -53,7 +53,7 @@ const commandBot = (bot, commands) => {
   };
 
   const finalBot = commands.reduce(commandBotReducer, bot);
-  return `${JSON.stringify(finalBot)}:\n`;
+  return `${finalBot.x} ${finalBot.y} ${finalBot.orientation}\n`;
 };
 
 const parse = input => {
@@ -74,5 +74,5 @@ const parse = input => {
 };
 
 const output = parse(input);
-
+fs.writeFileSync("output.txt", output);
 console.log(output);
