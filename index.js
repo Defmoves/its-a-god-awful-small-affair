@@ -12,6 +12,10 @@ const makeBotObject = botString => {
   };
 };
 
+const commandBot = (bot, commands) => {
+  return `${JSON.stringify(bot)}: ${JSON.stringify(commands)} \n`;
+};
+
 const parse = input => {
   let bot = "";
   const inputReducer = (accumalator, current) => {
@@ -19,9 +23,7 @@ const parse = input => {
       case 1:
         const botObject = makeBotObject(bot);
         const commands = current.split("");
-        return (accumalator += `${JSON.stringify(botObject)}: ${JSON.stringify(
-          commands
-        )} \n`);
+        return (accumalator += commandBot(botObject, commands));
       case 3:
         bot = current;
         return accumalator;
