@@ -13,7 +13,47 @@ const makeBotObject = botString => {
 };
 
 const commandBot = (bot, commands) => {
-  return `${JSON.stringify(bot)}: ${JSON.stringify(commands)} \n`;
+  const commandBotReducer = (bot, command) => {
+    // Orientation
+    switch (command) {
+      case "L":
+        switch (bot.orientation) {
+          case "N":
+            bot.orientation = "W";
+            break;
+          case "E":
+            bot.orientation = "N";
+            break;
+          case "S":
+            bot.orientation = "E";
+            break;
+          case "W":
+            bot.orientation = "S";
+            break;
+        }
+        break;
+      case "R":
+        switch (bot.orientation) {
+          case "N":
+            bot.orientation = "E";
+            break;
+          case "E":
+            bot.orientation = "S";
+            break;
+          case "S":
+            bot.orientation = "W";
+            break;
+          case "W":
+            bot.orientation = "N";
+            break;
+        }
+        break;
+    }
+    return bot;
+  };
+
+  const finalBot = commands.reduce(commandBotReducer, bot);
+  return `${JSON.stringify(finalBot)}:\n`;
 };
 
 const parse = input => {
