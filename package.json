@@ -1,0 +1,22 @@
+{
+  "name": "its-a-god-awful-small-affair",
+  "version": "0.1.0",
+  "description": "To the girl with the mousy hair",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Defmoves/its-a-god-awful-small-affair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Defmoves/its-a-god-awful-small-affair/issues"
+  },
+  "homepage": "https://github.com/Defmoves/its-a-god-awful-small-affair#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}

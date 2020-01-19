@@ -15,6 +15,7 @@ const makeBotObject = botString => {
     status: ""
   };
 };
+module.exports = makeBotObject;
 
 const commandBot = (bot, commands) => {
   const commandBotReducer = (bot, command) => {
