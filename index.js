@@ -3,5 +3,10 @@ const input = fs.readFileSync("input.txt", "utf8").split("\n");
 // Make this immutable?
 const bondaries = input.shift().split("/");
 
-console.log(bondaries);
-console.log(input);
+const parse = input => {
+  return input;
+};
+
+const output = parse(input);
+
+console.log(output);
