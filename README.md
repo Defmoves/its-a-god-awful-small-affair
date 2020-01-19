@@ -1,6 +1,4 @@
-# its-a-god-awful-small-affair
-
-> It's a god-awful small affair
+> It's a god-awful small affair 
 > To the girl with the mousy hair
 > But her mummy is yelling, "No!"
 > And her daddy has told her to go
@@ -13,10 +11,31 @@
 
 ## What remains
 
-### Tests, tests, tests!
+Frankly, plenty...
 
-I was only able to add the most basic of tests, and even those were added outside the alloted time. Hence I have little faith in the code as it stands. Were I to continue I would love to add a comprehensive test suit to ensure all my assumptions are correct, and fix any bugs that may service.
+#### Tests, tests, tests!
 
-### To someone with a hammer all problems look like a nail
+I was only able to add some very most basic of tests, and even those were added outside the alloted time. Hence I don't have the faith in the code I would like. The next step would be to add a comprehensive test suit. Ensuring my assumptions are correct, and fix any bugs that may surface.
 
-I've just started Eric Elliot's [Composing Software](https://leanpub.com/composingsoftware), now while I'm not ready write code in "point free style" yet, I have been pondering reducers. So when I saw the input as an array, well I just could not help but think of a reducer solution. On refelction this is less that ideal, while the "commandBotReducer" is likely fine, the "inputReducer" is a little mad. Not to mention that nesting one reducer inside another leads to some odd circular thinking, and so is very legiable. This becaume obvoius farily quickly, yet as I was trying to hit the dealine I forwent the refactor. Had I more time, I would likley rewirte the "inputReducer" at the very least. 
+#### To someone with a hammer all problems look like a nail
+
+I've just started Eric Elliot's [Composing Software](https://leanpub.com/composingsoftware), now while I'm not ready to write code in "point free style" yet, I have been considering the flexibility of reducers. So when I saw the input as an array... well I just could not help but think of a reducer solution. 
+
+On refection this is less that ideal, while the **commandBotReducer** is likely fine, the **inputReducer** is a little mad. Not to mention that nesting one reducer inside another leads to some odd circular thinking, and not as legible as I would like. This became obvious midway, yet as I was trying to hit the deadline I forwent the refactor. 
+
+#### Refactor all the things
+
+Had I more time, I would likely rewrite the **inputReducer** at the very least. While this test was supposed to be a place for me to showcase my style, the tight deadline and uniqueness of the challenge spurred me forward to the focus on solving the challenge itself and the code suffered somewhat. Seeing the solution became the goal. Yet the nested reducers and likely the nested switches should have had the refactor they seem to need.
+
+*In Summary,* Technical Tests are not the best place to experiment with new concepts, yet at the very least it was kind of fun. :)
+
+## And Beyond
+
+The nature of the grid puts me in mind of various [cellular automata](https://en.wikipedia.org/wiki/Cellular_automaton) such as [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). I toyed with various forms of artificial life before and similar ideas could be bought to this project.
+
+For example you create a large grid, say 50x50 and start each bot at 0,0. Give each a set of randomly generated of commands, 50 in total. These commands are now the DNA of our Automata. Let each bot loose, ideally in parallel. Once done lost bots are considered dead (sorry fellas, but it was for a good cause). However survivors are awarded a *health* score based on how close their final position was to 50,50. These survivors are then randomly paired and their DNA spliced (say 50% from each parent) with their partners to form a new generation of bots. Iterate.
+
+It would be interesting to see how many generations (on average) it would take before the perfect Uber bot starts to trend. One that moves directly from 0,0 to 50,50. 
+
+Naturally all the arbitrary parameters above could be tweaked for comparison. One could introduce new scents to act as waypoints or food, add random mutations per generation, even predators, or simply enhance the health calculation. The list is as long and varied as life itself. Perhaps even more so, one could "breed" bots with 3 parents, or 50. You know, just to make sure we ourselves are on the right track...
+
