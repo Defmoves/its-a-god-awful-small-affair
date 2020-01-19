@@ -1,19 +1,27 @@
 const fs = require("fs");
 const input = fs.readFileSync("input.txt", "utf8").split("\n");
 // Make this immutable?
-const bondaries = input.shift().split("/");
+const boundaries = input.shift().split(" ");
+const boundaryX = boundaries[0];
+const boundaryY = boundaries[1];
 
 const makeBotObject = botString => {
   const botArray = botString.split(" ");
   return {
-    x: botArray[0],
-    y: botArray[1],
-    orientation: botArray[2]
+    x: Number(botArray[0]),
+    y: Number(botArray[1]),
+    orientation: botArray[2],
+    status: ""
   };
 };
 
 const commandBot = (bot, commands) => {
   const commandBotReducer = (bot, command) => {
+    // lost bots don't move, this is a no-op
+    if (bot.status === "LOST") {
+      return bot;
+    }
+
     // Orientation
     switch (command) {
       case "L":
@@ -48,12 +56,49 @@ const commandBot = (bot, commands) => {
             break;
         }
         break;
+      // Movement
+      case "F":
+        switch (bot.orientation) {
+          case "N":
+            const north = bot.y + 1;
+            if (north > boundaryY) {
+              bot.status = "LOST";
+            } else {
+              bot.y = north;
+            }
+            break;
+          case "E":
+            const east = bot.x + 1;
+            if (east > boundaryX) {
+              bot.status = "LOST";
+            } else {
+              bot.x = east;
+            }
+            break;
+          case "S":
+            const south = bot.y - 1;
+            if (south < 0) {
+              bot.status = "LOST";
+            } else {
+              bot.y = south;
+            }
+            break;
+          case "W":
+            const west = bot.x - 1;
+            if (west < 0) {
+              bot.status = "LOST";
+            } else {
+              bot.x = west;
+            }
+            break;
+        }
+        break;
     }
     return bot;
   };
 
   const finalBot = commands.reduce(commandBotReducer, bot);
-  return `${finalBot.x} ${finalBot.y} ${finalBot.orientation}\n`;
+  return `${finalBot.x} ${finalBot.y} ${finalBot.orientation} ${finalBot.status}\n`;
 };
 
 const parse = input => {
