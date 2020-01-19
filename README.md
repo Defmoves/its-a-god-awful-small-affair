@@ -27,13 +27,13 @@ On refection this is less that ideal, while the **commandBotReducer** is likely 
 
 Had I more time, I would likely rewrite the **inputReducer** at the very least. While this test was supposed to be a place for me to showcase my style, the tight deadline and uniqueness of the challenge spurred me to focus on solving the challenge itself. Seeing the solution became the goal. Yet the nested reducers and likely the nested switches should have had the refactor they seem to need. At the very least refactored into smaller, testable functions.
 
-*In Summary,* technical tests are not the best place to experiment with new concepts, yet at the very least it was kind of fun. :)
+*In Summary,* technical tests are not the best place to experiment with new concepts, yet it was kind of fun. :)
 
 ## And Beyond
 
 The nature of the grid puts me in mind of various [cellular automata](https://en.wikipedia.org/wiki/Cellular_automaton) such as [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). I toyed with various forms of artificial life before and similar ideas could be bought to this project.
 
-For example you could create a large grid, say 50x50 and start each bot at 0,0. Give each a set of randomly generated of commands, 50 in total. These commands are now the DNA of our Automata. Let each bot loose, ideally in parallel. Once done lost bots are considered dead (sorry fellas, but it was for a good cause). However survivors are awarded a *health* score based on how close their final position was to 50,50. These survivors are then randomly paired and their DNA spliced with their partners (perhaps starting with 50% from each parent) to form a new generation of bots. Iterate.
+For example you could create a large grid, say 50x50 and start each bot at 0,0. Give each a set of randomly generated of commands, 50 in total. These commands are now the DNA of our Automata. Let each bot loose, ideally in parallel. Once done, lost bots are considered dead (sorry fellas, but it was for a good cause). However survivors are awarded a *health* score based on how close their final position was to 50,50. These survivors are then randomly paired and their DNA spliced with their partners (perhaps starting with 50% from each parent) to form a new generation of bots. Iterate.
 
 It would be interesting to see how many generations (on average) it would take before the perfect Uber bot starts to trend. One that moves directly from 0,0 to 50,50. 
 
