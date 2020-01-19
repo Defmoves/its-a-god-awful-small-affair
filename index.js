@@ -15,7 +15,6 @@ const makeBotObject = botString => {
     status: ""
   };
 };
-module.exports = makeBotObject;
 
 const commandBot = (bot, commands) => {
   const commandBotReducer = (bot, command) => {
@@ -139,3 +138,5 @@ const output = parse(input);
 fs.writeFileSync("output.txt", output);
 console.log("Complete!");
 console.log("See output.txt for results");
+
+module.exports = { makeBotObject, commandBot };
