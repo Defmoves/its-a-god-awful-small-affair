@@ -39,8 +39,8 @@ It would be interesting to see how many generations (on average) it would take b
 
 Naturally all the arbitrary parameters could be tweaked for comparison. One could introduce new scents to act as waypoints or food, add random mutations per generation, even predators, or simply enhance the health calculation. The list is as long and varied as life itself. Perhaps even more so, one could "breed" bots with 3 parents, or 50. You know, just to make sure we ourselves are on the right track, and to answer in our own small way...
 
-:musical_note: Oh man! Wonder if he'll ever know
-:notes: He's in the best selling show
-:alien: Is there life on Mars?
+:musical_note: Oh man! Wonder if he'll ever know  
+:notes: He's in the best selling show  
+:alien: Is there life on Mars?  
 
 
