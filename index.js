@@ -18,7 +18,10 @@ const parse = input => {
     switch (current.split(" ").length) {
       case 1:
         const botObject = makeBotObject(bot);
-        return (accumalator += `${JSON.stringify(botObject)}: ${current} \n`);
+        const commands = current.split("");
+        return (accumalator += `${JSON.stringify(botObject)}: ${JSON.stringify(
+          commands
+        )} \n`);
       case 3:
         bot = current;
         return accumalator;
